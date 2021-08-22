@@ -24,6 +24,23 @@ scene.add(characterMesh);
 //problem : if the objecct doesn't apear then you should change the position of the camera or the object
 camera.position.z=5;
 
+//add a floor geometry
+const floorGeometry = new THREE.PlaneGeometry(100,10,10);
+
+const floorMaterial = new THREE.MeshBasicMaterial({
+
+    color: 0x228B22,
+    side: THREE.DoubleSide
+
+});
+
+const floorMesh = new THREE.Mesh(floorGeometry, floorMaterial);
+
+floorMesh.position.x= Math.PI/2
+floorMesh.position.y= -5;
+
+scene.add(floorMesh);
+
 //animation
 const animate = function(){
     requestAnimationFrame(animate);
